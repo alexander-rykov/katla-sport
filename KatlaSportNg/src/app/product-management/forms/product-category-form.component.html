@@ -1,0 +1,54 @@
+<div class="container">
+  <h2>Product Category Editor</h2>
+  <form (ngSubmit)="onSubmit()" #productCategoryForm="ngForm">
+    <div class="form-group" *ngIf='existed'>
+      <label for="idLabel">ID</label>
+      <input type="text" class="form-control" id="id" aria-describedby="idLabel" [(ngModel)]="productCategory.id" name="id" #id="ngModel"
+        readonly>
+    </div>
+    <div class="form-group">
+      <label for="name" id="nameLabel">Product Category Name</label>
+      <input type="text" class="form-control" id="name" aria-describedby="nameLabel" minlength="4" maxlength="60" required [(ngModel)]="productCategory.name"
+        name="name" #name="ngModel">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+        <div *ngIf="name.errors.required">Product Category Name is required.</div>
+        <div *ngIf="name.errors.minlength">Product Category Name must be at least 4 characters long.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="code" id="codeLabel">Product Category Code</label>
+      <input type="text" class="form-control" id="code" aria-describedby="codeLabel" minlength="5" maxlength="5" required [(ngModel)]="productCategory.code"
+        name="code" #code="ngModel">
+      <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert alert-danger">
+        <div *ngIf="code.errors.required">Product Category Code is required.</div>
+        <div *ngIf="code.errors.minlength">Product Category code must be at least 5 characters long.</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" id="descriptionLabel">Product Category Description</label>
+      <textarea class="form-control" id="description" aria-describedby="descriptionLabel" rows="4" maxlength="300" [(ngModel)]="productCategory.description"
+        name="description" #description="ngModel">
+      </textarea>
+    </div>
+    <div class="form-group" *ngIf='existed'>
+      <label for="lastUpdated" id="lastUpdatedLabel">Last Update</label>
+      <input type="text" class="form-control" id="lastUpdated" aria-describedby="lastUpdatedLabel" required [(ngModel)]="productCategory.lastUpdated"
+        name="lastUpdated" #lastUpdated="ngModel" readonly>
+    </div>
+    <div class="btn-toolbar" role="toolbar" aria-label="Action buttons">
+      <div class="btn-group mr-1" role="group" aria-label="Cancel group">
+        <button type="button" class="btn btn-primary" (click)="onCancel()">Back</button>
+      </div>
+      <div class="btn-group mr-4" role="group" aria-label="Save group">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+      <div class="btn-group mr-1" role="group" aria-label="Delete group" *ngIf="existed && !productCategory.isDeleted">
+        <button type="button" class="btn btn-warning" (click)="onDelete()">Delete</button>
+      </div>
+      <div class="btn-group" role="group" aria-label="Purge group" *ngIf="existed && productCategory.isDeleted">
+        <button type="button" class="btn btn-warning" (click)="onUndelete()">Undelete</button>
+        <button type="button" class="btn btn-danger" (click)="onPurge()">Purge</button>
+      </div>
+    </div>
+  </form>
+</div>
