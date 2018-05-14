@@ -1,0 +1,36 @@
+<div class="container">
+  <h2>Product List</h2>
+  <table class="table table-nofluid">
+    <thead>
+      <th scope="col">#</th>
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Last Update</th>
+      <th scope="col"></th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of products">
+        <th scope="row">{{product.id}}</th>
+        <td>{{product.code}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.categoryCode}}</td>
+        <td>{{product.lastUpdated}}</td>
+        <td>
+          <div class="btn-toolbar" role="toolbar" aria-label="Product action buttons">
+            <div class="btn-group mr-1" role="group" aria-label="Delete group" *ngIf="product.isDeleted">
+              <button type="button" class="btn btn-warning">Deleted</button>
+            </div>
+            <div class="btn-group mr-1" role="group" aria-label="View category group">
+              <button routerLink="/category/{{product.categoryId}}/products" type="button" class="btn btn-primary">View category products</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="Edit group">
+              <button routerLink="/product/{{product.id}}" type="button" class="btn btn-primary">Edit</button>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
