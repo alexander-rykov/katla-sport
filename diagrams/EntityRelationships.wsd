@@ -1,0 +1,40 @@
+@startuml
+
+class Category {
+  Id : int
+  Name : string
+}
+
+class CatalogueProduct {
+  Id : int
+  CategoryId : int
+  Name : string
+}
+
+class StoreHive {
+  Id : int
+  Name : string
+  Address : string
+}
+
+class StoreHiveSection {
+  Id : int
+  StoreHiveId : int
+  Name : string
+}
+
+class StoreItem {
+  Id : int
+  ProductId : int
+  LocationId : int
+  Quantity : int
+  Booked : int
+}
+
+Category "1" o-- "*" CatalogueProduct : contains >
+StoreHive "1" *-- "1..*" StoreHiveSection : has >
+StoreHiveSection "1" o-- "*" StoreItem : stores
+CatalogueProduct "1" o-- "*" StoreItem : references
+Category "*" -- "*" StoreHiveSection : stores <
+
+@enduml
