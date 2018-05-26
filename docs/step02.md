@@ -40,7 +40,7 @@ public string ManufacturerCode { get; set; }
 public decimal Price { get; set; }
 ```
 
-3. Добавить описание свойства Description, ManufacturerCode и Price в файл конфигурации класса [ProductCategoryConfiguration](../KatlaSport.DataAccess/ProductCatalogue/CatalogueProductConfiguration.cs).
+3. Добавить описание свойства Description, ManufacturerCode и Price в файл конфигурации класса [CatalogueProductConfiguration](../KatlaSport.DataAccess/ProductCatalogue/CatalogueProductConfiguration.cs).
 
 Ограничения:
 * Description - максимальная длина строки 300 символов, необязательное поле.
@@ -49,31 +49,11 @@ public decimal Price { get; set; }
 
 ```cs
 Property(i => i.Description).HasColumnName("product_description").HasMaxLength(300);
-Property(i => i.ManufacturerCode).HasColumnName("product_manufacturer_code").HasMaxLength(10).IsRequired();
-Property(i => i.Price).HasColumnName("product_price").IsRequired();
+Property(i => i.ManufacturerCode).HasColumnName("product_manufacturer_code").HasMaxLength(10).IsOptional();
+Property(i => i.Price).HasColumnName("product_price").IsOptional();
 ```
 
-4. Добавить значения по-умолчанию для классов CatalogueProduct в файл [Configuration](../KatlaSport.DataAccess/Migrations/Configuration.cs):
-
-```cs
-context.CatalogueProducts.AddOrUpdate(
-    i => i.Id,
-    new CatalogueProduct
-    {
-        Id = 1,
-        Name = "Kyak Men Shoes",
-        Code = "KYME1",
-        Description = "Kyak Men Shoes description", // New default value.
-        ManufacturerCode = "KYAK", // New default value.
-        Price = 10.1M, // New default value.
-        CategoryId = 1,
-        IsDeleted = false,
-        CreatedBy = creatorId,
-        LastUpdatedBy = creatorId,
-        LastUpdated = timestamp
-    },
-```
-5. Добавить новые поля Description, ManufacturerCode и Price в класс API-модели [UpdateProductRequest](../KatlaSport.Services.Models/ProductManagement/UpdateProductRequest.cs):
+4. Добавить новые поля Description, ManufacturerCode и Price в класс API-модели [UpdateProductRequest](../KatlaSport.Services.Models/ProductManagement/UpdateProductRequest.cs):
 
 ```cs
 /// <summary>
@@ -92,7 +72,7 @@ public string ManufacturerCode { get; set; }
 public decimal Price { get; set; }
 ```
 
-6. Добавить новые правила в класс валидатора [UpdateProductRequestValidator](../KatlaSport.Services.Models/ProductManagement/UpdateProductRequestValidator.cs) для FluentValidation:
+5. Добавить новые правила в класс валидатора [UpdateProductRequestValidator](../KatlaSport.Services.Models/ProductManagement/UpdateProductRequestValidator.cs) для FluentValidation:
 
 ```cs
 RuleFor(r => r.Description).Length(0, 300);
@@ -100,21 +80,21 @@ RuleFor(r => r.ManufacturerCode).Length(4, 10);
 RuleFor(r => r.Price).GreaterThanOrEqualTo(0);
 ```
 
-7. Добавить новую миграцию с именем "AddProductDescriptionManCodePrice":
+6. Добавить новую миграцию с именем "AddProductDescriptionManCodePrice":
 
 ```sh
 PM> Add-Migration -Name AddProductDescriptionManCodePrice
 ```
 
-8. Собрать проект и исправить ошибки и предупреждения.
+7. Собрать проект и исправить ошибки и предупреждения.
 
-9. Обновить базу данных.
+8. Обновить базу данных.
 
 ```sh
 PM> Update-Database
 ```
 
-10. Сохранить изменения как отдельный коммит.
+9. Сохранить изменения как отдельный коммит.
 
 ```sh
 $ git status
@@ -125,7 +105,7 @@ $ git log
 $ git push -u origin step2
 ```
 
-11. Слить ветку "step2" с веткой "master".
+10. Слить ветку "step2" с веткой "master".
 
 ```sh
 $ git checkout master
