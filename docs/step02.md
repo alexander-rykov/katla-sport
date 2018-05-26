@@ -7,8 +7,6 @@
 Расширить модель CatalogueProduct в проекте KatlaSport.DataAccess, добавив новые поля Description, ManufacturerCode и Price.
 Для этого шага в коде есть подсказки "TODO STEP 2".
 
-Перед выполнением требуется удалить базу данных "KatlaDB" и создать новую с таким же именем. // TODO -default values?
-
 ### Выполнение
 
 1. Создать новую ветку с именем "step2":
