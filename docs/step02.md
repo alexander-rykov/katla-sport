@@ -77,6 +77,21 @@ RuleFor(r => r.Description).Length(0, 300);
 RuleFor(r => r.ManufacturerCode).Length(4, 10);
 RuleFor(r => r.Price).GreaterThanOrEqualTo(0);
 ```
+6. Изменить маппинг в классе [ProductManagementMappingProfile](../KatlaSport.Services/ProductManagement/ProductManagementMappingProfile.cs):
+
+Было:
+
+```cs
+CreateMap<DataAccessProduct, Product>();
+```
+
+Стало:
+
+```cs
+CreateMap<DataAccessProduct, Product>()
+    .ForMember(li => li.Description, opt => opt.MapFrom(p => p.Description == null ? string.Empty : p.Description))
+    .ForMember(li => li.ManufacturerCode, opt => opt.MapFrom(p => p.ManufacturerCode == null ? string.Empty : p.ManufacturerCode));
+```
 
 6. Добавить новую миграцию с именем "AddProductDescriptionManCodePrice":
 
