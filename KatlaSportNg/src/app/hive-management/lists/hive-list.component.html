@@ -3,19 +3,26 @@
   <table class="table table-nonfluid">
     <thead>
       <th scope="col">#</th>
-      <!-- TODO STEP 6 - Add Code and Name headers here. -->
+      <th scope="col">Code</th>
+      <th scope="col">Name</th>
       <th scope="col"></th>
     </thead>
     <tbody>
       <tr *ngFor="let hive of hives">
         <th scope="row">{{hive.id}}</th>
-        <!-- TODO STEP 6 - Add code and name values here. -->
+        <td>{{hive.code}}</td>
+        <td>{{hive.name}}</td>
         <td>
           <span class="btn-toolbar" role="toolbar" aria-label="Hive action buttons" style="display: block; white-space:nowrap;">
             <div class="btn-group mr-2" role="group" aria-label="Delete group" *ngIf="!hive.isDeleted" (click)="onDelete(hive.id)">
               <button type="button" class="btn btn-danger">Delete</button>
             </div>
-            <!-- TODO STEP 6 - Add buttons here. -->
+            <div class="btn-group mr-2" role="group" aria-label="View group">
+              <button routerLink="/hive/{{hive.id}}/sections" type="button" class="btn btn-primary">View sections</button>
+            </div>
+            <div class="btn-group" role="group" aria-label="Edit group">
+              <button routerLink="/hive/{{hive.id}}" type="button" class="btn btn-primary">Edit</button>
+            </div>
           </span>
         </td>
       </tr>
