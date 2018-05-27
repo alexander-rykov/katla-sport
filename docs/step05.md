@@ -74,7 +74,7 @@ public async Task<Something> GetSomethingAsync()
 6. Удалить из класса [DomainContextBase](../KatlaSport.DataAccess/DomainContextBase.cs) метод SaveChanges.
 7. Собрать проект, исправить ошибки и предупреждения (если есть).
 8. Сохранить изменения как отдельный коммит с понятным описанием "Replace sync. method calls in HivesController and HiveService with async.".
-9. Слить ветку "step5" с веткой "master".
+9. "step5" -> "master".
 
 ### Проверка
 
