@@ -18,10 +18,10 @@
         <td>{{product.lastUpdated}}</td>
         <td>
           <div class="btn-toolbar" role="toolbar" aria-label="Product action buttons">
-            <div class="btn-group mr-2" role="group" aria-label="Delete group" *ngIf="product.isDeleted">
-              <button type="button" class="btn btn-danger">Deleted</button>
+            <div class="btn-group mr-1" role="group" aria-label="Delete group" *ngIf="product.isDeleted">
+              <button type="button" class="btn btn-warning">Deleted</button>
             </div>
-            <div class="btn-group mr-2" role="group" aria-label="View category group">
+            <div class="btn-group mr-1" role="group" aria-label="View category group">
               <button routerLink="/category/{{product.categoryId}}/products" type="button" class="btn btn-primary">View category products</button>
             </div>
             <div class="btn-group" role="group" aria-label="Edit group">

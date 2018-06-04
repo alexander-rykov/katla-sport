@@ -12,8 +12,8 @@
 2. Добавить в код разметки компонента HiveListComponent новую группу с одной кнопкой "Restore". Группа должна отображаться для каждой строки таблицы, если "hive.isDeleted == true" (используйте [ngIf](https://angular.io/api/common/NgIf)). Событие по кнопке - onRestore(hive.id).
 3. Реализовать в компоненте HiveListComponent функцию "onRestore".
 4. Реализовать в сервисе HiveService функцию "setHiveStatus".
-5. Добавить в код разметки компонента HiveSectionListComponent кнопки "Delete" и "Restore" c обработчиками "onDelete" и "onRestore" соответственно.
-6. Добавить в компонент HiveSectionListComponent функции "onDelete" и "onRestore".
+5. Добавить в код разметки компонента HiveSectionListComponent кнопки "Delete" и "Undelete" c обработчиками "onDelete" и "onUndelete" соответственно.
+6. Добавить в компонент HiveSectionListComponent функции "onDelete" и "onUndelete".
 7. Реализовать в сервисе HiveSectionService функцию "setHiveSectionStatus".
 8. Собрать проект, исправить ошибки. "commit", "push". Влить в "master".
 
@@ -21,12 +21,12 @@
 
 1. Открыть [http://localhost/hives](http://localhost:4200/hives).
 2. Нажать кнопку "Delete" для любой строки таблицы.
-3. Кнопка "Delete" должна исчезнуть, должна появиться кнопка "Restore".
-4. Нажать "Restore".
-5. Кнопка "Restore" должна исчезнуть, должна появиться кнопка "Delete".
+3. Кнопка "Delete" должна исчезнуть, должна появиться кнопка "Undelete".
+4. Нажать "Undelete".
+5. Кнопка "Undelete" должна исчезнуть, должна появиться кнопка "Delete".
 6. Открыть список секций.
 7. Проверить кнопку "Delete".
-8. Проверить кнопку "Restore".
+8. Проверить кнопку "Undelete".
 
 ### Материалы
 
