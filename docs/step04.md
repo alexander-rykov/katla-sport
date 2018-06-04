@@ -9,7 +9,7 @@
 ### Выполнение
 
 1. "step4".
-2. Открыть HTML-шаблон компонента [product-category-list](../KatlaSportNg/src/app/product-management/lists/product-category-list.component.html).
+2. Открыть разметку компонента [ProductCategoryListComponent](../KatlaSportNg/src/app/product-management/lists/product-category-list.component.html).
 3. Добавить колонку Products в заголовок таблицы:
 
 ```html
@@ -23,7 +23,7 @@
 ```
 
 5. Собрать проект, исправить ошибки и предупреждения (если есть).
-6. Сохранить изменения как отдельный коммит с понятным описанием "Add Products column to product-category-list component.".
+6. Сохранить изменения как отдельный коммит с понятным описанием "Add Products column to ProductCategoryListComponent.".
 7. Слить ветку "step4" с веткой "master".
 
 ### Проверка
