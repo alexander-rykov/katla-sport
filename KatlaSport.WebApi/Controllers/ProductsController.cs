@@ -16,11 +16,11 @@ namespace KatlaSport.WebApi.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     [CustomExceptionFilter]
     [SwaggerResponseRemoveDefaults]
-    public class ProductController : ApiController
+    public class ProductsController : ApiController
     {
         private readonly IProductCatalogueService _productService;
 
-        public ProductController(IProductCatalogueService productService)
+        public ProductsController(IProductCatalogueService productService)
         {
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
         }
