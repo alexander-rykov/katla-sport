@@ -11,5 +11,4 @@ export class HiveSectionFormComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
