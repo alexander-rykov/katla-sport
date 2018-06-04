@@ -13,7 +13,7 @@ namespace KatlaSport.WebApi.Controllers
 {
     [ApiVersion("1.0")]
     [RoutePrefix("api/sections")]
-    [EnableCors(origins: "*", headers: "", methods: "")]
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     [CustomExceptionFilter]
     [SwaggerResponseRemoveDefaults]
     public class HiveSectionsController : ApiController
