@@ -9,7 +9,7 @@
 ### Выполнение
 
 1. "step6".
-2. Открыть модель [hive-list-item](../KatlaSportNg/src/app/hive-management/models/hive-list-item.ts).
+2. Открыть модель [HiveListItem](../KatlaSportNg/src/app/hive-management/models/hive-list-item.ts).
 3. Добавить в конструктор параметры name и code:
 
 ```ts
@@ -17,7 +17,7 @@ public name: string,
 public code: string,
 ```
 
-4. Открыть HTML-шаблон компонента [hive-list](../KatlaSportNg/src/app/hive-management/lists/hive-list.component.html).
+4. Открыть разметку компонента [HiveListComponent](../KatlaSportNg/src/app/hive-management/lists/hive-list.component.html).
 5. Добавить в заголовок таблицы колонки "Code" и "Name".
 6. Добавить в строку таблицы колонки для отображения code и name полей модели.
 7. Добавить кнопку перехода на секции:
