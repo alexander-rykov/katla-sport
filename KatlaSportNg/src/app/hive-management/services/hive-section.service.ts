@@ -34,6 +34,6 @@ export class HiveSectionService {
   }
 
   setHiveSectionStatus(hiveSectionId: number, deletedStatus: boolean): Observable<Object> {
-    return this.http.put<Object>(`${this.url}${hiveSectionId}/status/${deletedStatus}`, null);
+    return null;
   }
 }
