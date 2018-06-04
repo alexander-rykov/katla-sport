@@ -21,8 +21,6 @@ KatlaSport состоит из трех частей.
 
 * [Отношения классов — от UML к коду](https://habr.com/post/150041/)
 * [Наследование vs Композиция vs Агрегация](http://sergeyteplyakov.blogspot.com.by/2012/12/vs-vs.html)
-* [IHttpActionResult](https://github.com/aspnet/Mvc/issues/5507).
-* [CORS](https://docs.microsoft.com/en-us/aspnet/web-api/overview/security/enabling-cross-origin-requests-in-web-api#enable-cors).
 
 ### Выполнение
 
