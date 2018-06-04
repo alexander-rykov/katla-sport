@@ -12,6 +12,8 @@ namespace KatlaSport.Services.ProductManagement
             CreateMap<DataAccessProductCategory, ProductCategory>();
             CreateMap<DataAccessProductCategory, ProductCategoryListItem>();
             CreateMap<DataAccessProduct, ProductCategoryProductListItem>();
+
+            // TODO STEP 2 - Change the mapping below.
             CreateMap<DataAccessProduct, Product>();
 
             CreateMap<DataAccessProduct, ProductListItem>()
