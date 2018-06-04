@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Hive Editor</h2>
-  <form (ngSubmit)="onSubmit()" #productCategoryForm="ngForm">
+  <form (ngSubmit)="onSubmit()" #hiveForm="ngForm">
     <div class="form-group" *ngIf='existed'>
       <label for="idLabel">ID</label>
       <input type="text" class="form-control" id="id" aria-describedby="idLabel" [(ngModel)]="hive.id" name="id" #id="ngModel"
@@ -17,7 +17,7 @@
     </div>
     <div class="form-group" *ngIf='existed'>
       <label for="lastUpdated" id="lastUpdatedLabel">Last Update</label>
-      <input type="text" class="form-control" id="lastUpdated" aria-describedby="lastUpdatedLabel" required [(ngModel)]="productCategory.lastUpdated"
+      <input type="text" class="form-control" id="lastUpdated" aria-describedby="lastUpdatedLabel" required [(ngModel)]="hive.lastUpdated"
         name="lastUpdated" #lastUpdated="ngModel" readonly>
     </div>
   </form>

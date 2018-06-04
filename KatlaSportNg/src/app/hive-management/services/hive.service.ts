@@ -30,8 +30,8 @@ export class HiveService {
     return null;
   }
 
-  updateHive(hive: Hive): Observable<Hive> {
-    return null
+  updateHive(hive: Hive): Observable<Object> {
+    return null;
   }
 
   deleteHive(hiveId: number): Observable<Object> {
