@@ -22,7 +22,7 @@
 }
 ```
 
-* Задокументируйте коды ответа HTTP: Created, BadRequest, Conflict, NotFound, InternalServerError.
+* Задокументируйте коды ответа HTTP: Created, BadRequest, Conflict, InternalServerError.
 * Метод должен проверять поля модели на валидность.
 * Метод должен возвращать header "Location" с указанием на URI созданного ресурса.
 
