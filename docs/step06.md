@@ -24,7 +24,7 @@ public code: string,
 
 ```html
 <div class="btn-group mr-2" role="group" aria-label="View group">
-  <button routerLink="/hive/{{hive.id}}/sections" type="button" class="btn btn-primary">View sectors</button>
+  <button routerLink="/hive/{{hive.id}}/sections" type="button" class="btn btn-primary">View sections</button>
 </div>
 ```
 
