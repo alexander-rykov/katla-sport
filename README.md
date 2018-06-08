@@ -4,18 +4,12 @@
 
 Цель проекта - дать студентам лаборатории навыки создания веб-приложения на базе ASP.NET + Angular.
 
-![KatlaSport Project Overview](images/KatlaSport.png "KatlaSport Project Overview")
-
-KatlaSport состоит из трех частей.
-
-1) Front-end Application. Приложение Angluar, которое загружается в браузер пользователя. Приложение находится в отдельном репозитории [katla-ng](https://github.com/epam-lab/katla-ng) и подключается в репозиторий проекта в качестве отдельного [подмодуля](https://git-scm.com/book/ru/v1/Инструменты-Git-Подмодули).
-2) Back-end Application. WebAPI-приложение ASP.NET, которое предоставляет REST-интерфейс.
-3) База данных.
-
-* [Требования](prerequisites.md)
-* [Описание](description.md)
+Проект
 
 ## Подготовка
+
+* [Требования](docs/prerequisites.md)
+* [Описание](docs/description.md)
 
 Дополнительные материалы:
 
@@ -38,6 +32,3 @@ KatlaSport состоит из трех частей.
 12. [Hive Editor](docs/step12.md)
 13. [HiveSectionsController+HiveSectionService](docs/step13.md)
 14. [Hive Sectior Editor](docs/step14.md)
-15. [HiveAnalysis](docs/step15.md)
-16. [StoreItems](docs/step16.md)
-17. [CustomerOrder/CustomerOrderItems](docs/step16.md)
