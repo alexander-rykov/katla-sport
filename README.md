@@ -10,11 +10,7 @@
 
 * [Требования](docs/prerequisites.md)
 * [Описание](docs/description.md)
-
-Дополнительные материалы:
-
-* [Отношения классов — от UML к коду](https://habr.com/post/150041/)
-* [Наследование vs Композиция vs Агрегация](http://sergeyteplyakov.blogspot.com.by/2012/12/vs-vs.html)
+* [Первый запуск](docs/first-run.md)
 
 ### Выполнение
 

@@ -11,7 +11,7 @@
 
 ### Сборка back-end проекта
 
-1. Откройте [KatlaSport.sln](KatlaSport.sln) в Visual Studio. Приложение состоит из нескольких проектов:
+1. Откройте [KatlaSport.sln](../KatlaSport.sln) в Visual Studio. Приложение состоит из нескольких проектов:
 2. Откройте Solution Explorer.
 3. Установите *KatlaSport.WebApi* как ["Startup Project"](https://msdn.microsoft.com/en-us/library/a1awth7y.aspx)
 4. Открыть Solution Explorer. Открыть меню для Solution 'KatlaSport'. Restore NuGet packages.
@@ -24,9 +24,9 @@
 1. Перейти в каталог KatlaSportNg и собрать проект.
 
 ```sh
-D:\epam-lab\
-$ cd KatlaSportNg
 D:\epam-lab\katla-sport-ng
+$ cd KatlaSportNg
+D:\epam-lab\katla-sport-ng\KatlaSportNg
 $ ng build
 
 Date: 2018-06-08T13:25:20.060Z
@@ -42,7 +42,7 @@ chunk {vendor} vendor.js, vendor.js.map (vendor) 4.11 MB [initial] [rendered]
 2. Запустить Angular Live Development Server.
 
 ```sh
-D:\epam-lab\katla-sport-ng
+D:\epam-lab\katla-sport-ng\KatlaSportNg
 $ ng serve
 
 ** Angular Live Development Server is listening on localhost: 4200, open your browser on http://localhost:4200/ **
