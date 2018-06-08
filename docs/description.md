@@ -4,7 +4,7 @@
 
 ### Структура приложения
 
-![3-tier Application Architecture](images/3tier-architecture.png "3-tier Application Architecture")
+![3-tier Application Architecture](../images/3tier-architecture.png "3-tier Application Architecture")
 
 Приложение KatlaSport построено по классической [трехуровневой архитектуре](https://ru.wikipedia.org/wiki/Трёхуровневая_архитектура) и состоит из следующих компонентов:
 
@@ -16,7 +16,7 @@
 
 Структура базы представлена на рисунке ([подсказка по типам реляционных связей](http://www.risetobloome.com/Page_1_S.aspx?ITEM=616)):
 
-![KatlaDb Relational Schema](images/katladb-schema.png "KatlaDb Relational Schema")
+![KatlaDb Relational Schema](../images/katladb-schema.png "KatlaDb Relational Schema")
 
 * Таблица "product_categories" хранит категории продуктов.
 * Таблица "catalogue_products" хранит описание продуктов. Каждый продукт принадлежит одной категории.
@@ -45,7 +45,7 @@
 
 Наличие "Class Reference" значит что классы проекта имеют ссылку на классы в другом проекте. Например, классы контроллеров в KatlaSport.WebApi используют классы из Katla.Sport.Services.Models.
 
-![Project and Class References](images/solution-references.png "Project and Class References")
+![Project and Class References](../images/solution-references.png "Project and Class References")
 
 Обратите внимание, что проект может иметь ссылку на зависимый проект, но при этом классы этого проекта не зависят от классов зависимого проекта. Например, классы KatlaSport.WebApi не используют напрямую классы сервисов KatlaSport.Services.
 
@@ -103,7 +103,7 @@
 
 В Back-end Application широко используюты дополнительные NuGet-пакеты, которые позволяют расширить функциональность приложения. Внешние зависимости на другие пакеты увеличивают сложность приложения и усложняют сборку, однако это компенсируется дополнительной функциональностью, повышением качества и уменьшением количества кода основного приложения.
 
-![Nuget Package References](images/nuget-references.png "Nuget Package References")
+![Nuget Package References](../images/nuget-references.png "Nuget Package References")
 
 * [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle).
 * [FluentValidation](https://github.com/JeremySkinner/FluentValidation).
