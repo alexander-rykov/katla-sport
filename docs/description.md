@@ -91,6 +91,12 @@
 </ItemGroup>
 ```
 
+#### Пример работы классов
+
+![Product Classes](../images/product-classes.png "Product Classes")
+
+![Product Sequence](../images/product-sequence.png "Product Sequence")
+
 ### Описание Front-end Application
 
 ### Пакеты back-end
