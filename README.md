@@ -10,6 +10,9 @@
 * [Описание](docs/description.md)
 * [Первый запуск](docs/first-run.md)
 
+## Важно!
+По завершении каждого из шагов пометить финальный коммит тэгом `step_N_finish` где N - номер шага!
+
 ### Выполнение
 
 1. [ProductCategory](docs/step01.md)
