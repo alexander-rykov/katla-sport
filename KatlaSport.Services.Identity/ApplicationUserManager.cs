@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin;
 
 namespace KatlaSport.Services.Identity
 {
@@ -9,20 +11,19 @@ namespace KatlaSport.Services.Identity
     /// </summary>
     public class ApplicationUserManager : UserManager<ApplicationUser>, IApplicationUserManager
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ApplicationIdentityDbContext _context;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationUserManager"/> class.
         /// </summary>
         /// <param name="store">The IUserStore is responsible for commiting changes via the UpdateAsync/CreateAsync methods.</param>
         /// <param name="context"><see cref="DbContext"/> for ASP.NET Identity infrastructure.</param>
-        public ApplicationUserManager(IUserStore<ApplicationUser> store, ApplicationDbContext context)
+        public ApplicationUserManager(IUserStore<ApplicationUser> store, ApplicationIdentityDbContext context)
             : base(store)
         {
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-/*
         /// <summary>
         /// Creates an instance of <see cref="ApplicationUserManager"/>.
         /// </summary>
@@ -31,7 +32,7 @@ namespace KatlaSport.Services.Identity
         /// <returns>An instance of <see cref="ApplicationUserManager"/></returns>
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            var dbContext = context.Get<ApplicationDbContext>();
+            var dbContext = context.Get<ApplicationIdentityDbContext>();
             var manager = new ApplicationUserManager(new UserStore<ApplicationUser>(dbContext), dbContext);
 
             // Configure validation logic for usernames
@@ -58,24 +59,23 @@ namespace KatlaSport.Services.Identity
 
             // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
             // You can write your own provider and plug it in here.
-            manager.RegisterTwoFactorProvider("Phone Code", new PhoneNumberTokenProvider<ApplicationUser>
-            {
-                MessageFormat = "Your security code is {0}"
-            });
-            manager.RegisterTwoFactorProvider("Email Code", new EmailTokenProvider<ApplicationUser>
-            {
-                Subject = "Security Code",
-                BodyFormat = "Your security code is {0}"
-            });
+            //manager.RegisterTwoFactorProvider("Phone Code", new PhoneNumberTokenProvider<ApplicationUser>
+            //{
+            //    MessageFormat = "Your security code is {0}"
+            //});
+            //manager.RegisterTwoFactorProvider("Email Code", new EmailTokenProvider<ApplicationUser>
+            //{
+            //    Subject = "Security Code",
+            //    BodyFormat = "Your security code is {0}"
+            //});
+
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {
-                manager.UserTokenProvider =
-                    new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
+                manager.UserTokenProvider = new DataProtectorTokenProvider<ApplicationUser>(dataProtectionProvider.Create("ASP.NET Identity"));
             }
 
             return manager;
         }
-*/
     }
 }

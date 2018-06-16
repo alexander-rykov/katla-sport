@@ -4,7 +4,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace KatlaSport.Services.Identity.Migrations
 {
-    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ApplicationIdentityDbContext>
     {
         public Configuration()
         {
@@ -15,7 +15,7 @@ namespace KatlaSport.Services.Identity.Migrations
             MigrationsNamespace = "KatlaSport.Services.Identity.Migrations";
         }
 
-        protected override void Seed(ApplicationDbContext context)
+        protected override void Seed(ApplicationIdentityDbContext context)
         {
             var userManager = new ApplicationUserManager(new UserStore<ApplicationUser>(context), context);
             var roleManager = new ApplicationRoleManager(new RoleStore<ApplicationRole>(context));

@@ -13,16 +13,10 @@ namespace KatlaSport.WebApi
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
-            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
-        }
-
-        public void ConfigureAuth(IAppBuilder app)
-        {
-            OwinConfiguration.Register(app);
+            OwinConfiguration.Configure(app);
 
             // Configure the application for OAuth based flow
-            OAuthAuthorizationServerOptions oAuthServerOptions = new OAuthAuthorizationServerOptions()
+            OAuthAuthorizationServerOptions oauthServerOptions = new OAuthAuthorizationServerOptions
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/token"),
@@ -31,8 +25,10 @@ namespace KatlaSport.WebApi
             };
 
             // Token Generation
-            app.UseOAuthAuthorizationServer(oAuthServerOptions);
+            app.UseOAuthAuthorizationServer(oauthServerOptions);
             app.UseOAuthBearerAuthentication(new OAuthBearerAuthenticationOptions());
+
+            app.UseCors(Microsoft.Owin.Cors.CorsOptions.AllowAll);
         }
     }
 }

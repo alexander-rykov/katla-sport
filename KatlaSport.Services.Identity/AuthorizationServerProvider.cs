@@ -5,7 +5,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Microsoft.Owin.Security.OAuth;
 
-namespace KatlaSport.WebApi.Providers
+namespace KatlaSport.Services.Identity
 {
     public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
@@ -37,17 +37,17 @@ namespace KatlaSport.WebApi.Providers
                 return;
             }
 
-            if (!user.EmailConfirmed)
-            {
-                context.SetError("unconfirmed_email", "The user email is not confirmed.");
-                return;
-            }
+            //if (!user.EmailConfirmed)
+            //{
+            //    context.SetError("unconfirmed_email", "The user email is not confirmed.");
+            //    return;
+            //}
 
-            if (!user.IsActive)
-            {
-                context.SetError("user_not_active", "The account is not active in the system.");
-                return;
-            }
+            //if (!user.IsActive)
+            //{
+            //    context.SetError("user_not_active", "The account is not active in the system.");
+            //    return;
+            //}
 
             ClaimsIdentity oAuthIdentity = await user.GenerateUserIdentityAsync(userManager);
             AuthenticationProperties properties = CreateProperties(user.UserName);

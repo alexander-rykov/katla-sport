@@ -7,15 +7,15 @@ namespace KatlaSport.Services.Identity
     /// <summary>
     /// Represents a <see cref="DbContext"/> for ASP.NET Identity infrastructure.
     /// </summary>
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationIdentityDbContext : IdentityDbContext<ApplicationUser>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ApplicationIdentityDbContext"/> class.
         /// </summary>
-        public ApplicationDbContext()
+        public ApplicationIdentityDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationDbContext, Configuration>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<ApplicationIdentityDbContext, Configuration>());
         }
     }
 }
