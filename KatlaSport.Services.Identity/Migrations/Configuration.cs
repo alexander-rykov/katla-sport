@@ -46,77 +46,41 @@ namespace KatlaSport.Services.Identity.Migrations
                 roleManager.CreateAsync(observerRole).Wait();
             }
 
-            //var admin = new ApplicationUser
-            //{
-            //    Email = "admin@test.com",
-            //    EmailConfirmed = true,
-            //    UserName = "admin@test.com",
-            //    DomainId = new Guid("B4B6780C-F3BE-4554-BFFD-BCFD18E93A94"),
-            //    IsActive = true
-            //};
-            //if (userManager.CreateAsync(admin, "1").Result == IdentityResult.Success)
-            //{
-            //    userManager.AddToRoleAsync(admin.Id, adminRole.Name).Wait();
-            //    userManager.AddProfileAsync(admin.DomainId, new UserProfileInfo
-            //    {
-            //        FirstName = "Admin",
-            //        LastName = "Admin"
-            //    }).Wait();
-            //}
+            var adminUser = new ApplicationUser
+            {
+                Email = "admin@katla-sport.com",
+                EmailConfirmed = true,
+                UserName = "admin@katla-sport.com",
+            };
 
-            //var candidate = new ApplicationUser
-            //{
-            //    Email = "candidate@test.com",
-            //    EmailConfirmed = true,
-            //    UserName = "candidate@test.com",
-            //    DomainId = new Guid("14620737-9BDF-4B4D-B6B9-01CD1EBE69EB"),
-            //    IsActive = true
-            //};
-            //if (userManager.CreateAsync(candidate, "1").Result == IdentityResult.Success)
-            //{
-            //    userManager.AddToRoleAsync(candidate.Id, candidateRole.Name).Wait();
-            //    userManager.AddProfileAsync(candidate.DomainId, new UserProfileInfo
-            //    {
-            //        FirstName = "Alexander",
-            //        LastName = "Pachkalov"
-            //    }).Wait();
-            //}
+            if (userManager.CreateAsync(adminUser, "katla1").Result == IdentityResult.Success)
+            {
+                userManager.AddToRoleAsync(adminUser.Id, adminRole.Name).Wait();
+            }
 
-            //var coach = new ApplicationUser
-            //{
-            //    Email = "coach@test.com",
-            //    EmailConfirmed = true,
-            //    UserName = "coach@test.com",
-            //    DomainId = new Guid("AF789597-4EA1-4478-85E7-5A7D03D47948"),
-            //    IsActive = true
-            //};
-            //if (userManager.CreateAsync(coach, "1").Result == IdentityResult.Success)
-            //{
-            //    userManager.AddToRoleAsync(coach.Id, coachRole.Name).Wait();
-            //    userManager.AddProfileAsync(coach.DomainId, new UserProfileInfo
-            //    {
-            //        FirstName = "Coach",
-            //        LastName = "Coacher"
-            //    }).Wait();
-            //}
+            var userUser = new ApplicationUser
+            {
+                Email = "user@katla-sport.com",
+                EmailConfirmed = true,
+                UserName = "user@katla-sport.com",
+            };
 
-            //var manager = new ApplicationUser
-            //{
-            //    Email = "manager@test.com",
-            //    EmailConfirmed = true,
-            //    UserName = "manager@test.com",
-            //    DomainId = new Guid("4eabfa0e-118e-4131-8ec9-1dbd29f68d3a"),
-            //    IsActive = true
-            //};
-            //if (userManager.CreateAsync(manager, "1").Result == IdentityResult.Success)
-            //{
-            //    userManager.AddToRoleAsync(manager.Id, managerRole.Name).Wait();
-            //    userManager.AddProfileAsync(manager.DomainId, new UserProfileInfo
-            //    {
-            //        FirstName = "Manag",
-            //        LastName = "Manager"
-            //    }).Wait();
-            //}
+            if (userManager.CreateAsync(userUser, "katla1").Result == IdentityResult.Success)
+            {
+                userManager.AddToRoleAsync(userUser.Id, userRole.Name).Wait();
+            }
+
+            var observerUser = new ApplicationUser
+            {
+                Email = "observer@katla-sport.com",
+                EmailConfirmed = true,
+                UserName = "observer@katla-sport.com",
+            };
+
+            if (userManager.CreateAsync(observerUser, "katla1").Result == IdentityResult.Success)
+            {
+                userManager.AddToRoleAsync(observerUser.Id, observerRole.Name).Wait();
+            }
         }
     }
 }

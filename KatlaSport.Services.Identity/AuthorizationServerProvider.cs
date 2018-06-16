@@ -37,11 +37,11 @@ namespace KatlaSport.Services.Identity
                 return;
             }
 
-            //if (!user.EmailConfirmed)
-            //{
-            //    context.SetError("unconfirmed_email", "The user email is not confirmed.");
-            //    return;
-            //}
+            if (!user.EmailConfirmed)
+            {
+                context.SetError("unconfirmed_email", "The user email is not confirmed.");
+                return;
+            }
 
             //if (!user.IsActive)
             //{
