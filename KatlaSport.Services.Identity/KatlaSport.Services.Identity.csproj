@@ -85,12 +85,21 @@
     <Compile Include="AuthorizationServerProvider.cs" />
     <Compile Include="IApplicationRoleManager.cs" />
     <Compile Include="IApplicationUserManager.cs" />
+    <Compile Include="Migrations\201806160938594_CreateIdentityTables.cs" />
+    <Compile Include="Migrations\201806160938594_CreateIdentityTables.Designer.cs">
+      <DependentUpon>201806160938594_CreateIdentityTables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="OwinConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806160938594_CreateIdentityTables.resx">
+      <DependentUpon>201806160938594_CreateIdentityTables.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
