@@ -19,7 +19,11 @@ namespace KatlaSport.WebApi
             MapperConfig.Configure();
             FluentValidationModelValidatorProvider.Configure(GlobalConfiguration.Configuration);
 
-            HttpConfiguration config = GlobalConfiguration.Configuration;
+            ConfigureJsonFormatter(GlobalConfiguration.Configuration);
+        }
+
+        private void ConfigureJsonFormatter(HttpConfiguration config)
+        {
             config.Formatters.JsonFormatter.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             config.Formatters.JsonFormatter.SerializerSettings.DefaultValueHandling = DefaultValueHandling.Include;
             config.Formatters.JsonFormatter.UseDataContractJsonSerializer = false;

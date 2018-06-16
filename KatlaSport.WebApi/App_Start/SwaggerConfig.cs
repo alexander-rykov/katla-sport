@@ -4,8 +4,6 @@ using KatlaSport.WebApi;
 using Swashbuckle.Application;
 using System;
 
-[assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
-
 namespace KatlaSport.WebApi
 {
     public class SwaggerConfig
