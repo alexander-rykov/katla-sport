@@ -2,6 +2,9 @@ using System.Data.Entity.Migrations;
 
 namespace KatlaSport.Services.Identity.Migrations
 {
+    /// <summary>
+    /// Represents a migration that creates identity tables.
+    /// </summary>
     public partial class CreateIdentityTables : DbMigration
     {
         public override void Up()

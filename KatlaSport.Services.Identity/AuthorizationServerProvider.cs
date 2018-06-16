@@ -7,6 +7,9 @@ using Microsoft.Owin.Security.OAuth;
 
 namespace KatlaSport.Services.Identity
 {
+    /// <summary>
+    /// Represents an authorization server provider.
+    /// </summary>
     public class AuthorizationServerProvider : OAuthAuthorizationServerProvider
     {
         public static AuthenticationProperties CreateProperties(string userName)

@@ -5,7 +5,7 @@ namespace KatlaSport.Services.Identity
     /// <summary>
     /// Represents an application role.
     /// </summary>
-    public class ApplicationRole : IdentityRole
+    public class ApplicationRole : IdentityRole, IApplicationRole
     {
         public ApplicationRole()
         {

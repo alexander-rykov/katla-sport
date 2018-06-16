@@ -1,9 +1,9 @@
 ﻿namespace KatlaSport.Services.Identity
 {
     /// <summary>
-    /// Represents an application role manager.
+    /// Represents an application role.
     /// </summary>
-    public interface IApplicationRoleManager
+    public interface IApplicationRole
     {
     }
 }

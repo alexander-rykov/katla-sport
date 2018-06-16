@@ -5,6 +5,9 @@ using Microsoft.Owin;
 
 namespace KatlaSport.Services.Identity
 {
+    /// <summary>
+    /// Represents an application role manager.
+    /// </summary>
     public class ApplicationRoleManager : RoleManager<ApplicationRole>, IApplicationRoleManager
     {
         public ApplicationRoleManager(IRoleStore<ApplicationRole, string> store)

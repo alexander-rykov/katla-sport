@@ -8,7 +8,7 @@ namespace KatlaSport.Services.Identity
     /// <summary>
     /// Represents an application user.
     /// </summary>
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser, IApplicationUser
     {
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
