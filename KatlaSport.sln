@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KatlaSport.Services.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KatlaSport.Services.Models", "KatlaSport.Services.Models\KatlaSport.Services.Models.csproj", "{FBCA4661-79C9-4B45-9361-430B0C84F5EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KatlaSport.Services.Identity", "KatlaSport.Services.Identity\KatlaSport.Services.Identity.csproj", "{6821A7C4-D83E-4FBC-AED7-F7DC68ABBCCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FBCA4661-79C9-4B45-9361-430B0C84F5EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBCA4661-79C9-4B45-9361-430B0C84F5EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBCA4661-79C9-4B45-9361-430B0C84F5EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6821A7C4-D83E-4FBC-AED7-F7DC68ABBCCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6821A7C4-D83E-4FBC-AED7-F7DC68ABBCCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6821A7C4-D83E-4FBC-AED7-F7DC68ABBCCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6821A7C4-D83E-4FBC-AED7-F7DC68ABBCCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
