@@ -43,6 +43,9 @@ namespace KatlaSport.DataAccess.Migrations
         [Conditional("DEBUG")]
         private void SeedDatabase(ApplicationDbContext context)
         {
+            var random = new Random();
+            var manCode = random.Next(0000000001, 222222229).ToString();
+
             var timestamp = DateTime.UtcNow;
             var creatorId = 1;
 
@@ -90,7 +93,8 @@ namespace KatlaSport.DataAccess.Migrations
                     IsDeleted = false,
                     CreatedBy = creatorId,
                     LastUpdatedBy = creatorId,
-                    LastUpdated = timestamp
+                    LastUpdated = timestamp,
+                    ManufacturerCode = manCode
                 },
                 new CatalogueProduct
                 {
@@ -101,7 +105,8 @@ namespace KatlaSport.DataAccess.Migrations
                     IsDeleted = false,
                     CreatedBy = creatorId,
                     LastUpdatedBy = creatorId,
-                    LastUpdated = timestamp
+                    LastUpdated = timestamp,
+                    ManufacturerCode = manCode
                 },
                 new CatalogueProduct
                 {
@@ -112,6 +117,7 @@ namespace KatlaSport.DataAccess.Migrations
                     IsDeleted = false,
                     CreatedBy = creatorId,
                     LastUpdatedBy = creatorId,
+                    ManufacturerCode = manCode,
                     LastUpdated = timestamp
                 },
                 new CatalogueProduct
@@ -123,7 +129,8 @@ namespace KatlaSport.DataAccess.Migrations
                     IsDeleted = false,
                     CreatedBy = creatorId,
                     LastUpdatedBy = creatorId,
-                    LastUpdated = timestamp
+                    LastUpdated = timestamp,
+                    ManufacturerCode = manCode
                 });
 
             context.StoreHives.AddOrUpdate(
