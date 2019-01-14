@@ -230,10 +230,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KatlaSport.DataAccess\KatlaSport.DataAccess.csproj">
-      <Project>{7beb88d2-3698-4c1f-a0ee-45763804e1c5}</Project>
-      <Name>KatlaSport.DataAccess</Name>
-    </ProjectReference>
     <ProjectReference Include="..\KatlaSport.Services.Models\KatlaSport.Services.Models.csproj">
       <Project>{fbca4661-79c9-4b45-9361-430b0c84f5ea}</Project>
       <Name>KatlaSport.Services.Models</Name>
