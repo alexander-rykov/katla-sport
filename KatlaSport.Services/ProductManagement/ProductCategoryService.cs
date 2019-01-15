@@ -32,7 +32,7 @@ namespace KatlaSport.Services.ProductManagement
         public async Task<List<ProductCategoryListItem>> GetCategoriesAsync(int start, int amount)
         {
             var dbCategories = await _context.Categories.OrderBy(c => c.Id).Skip(start).Take(amount).ToListAsync();
-            var categories = dbCategories.Select(c => Mapper.Map<ProductCategoryListItem>(c)).ToList();
+            var categories = dbCategories.Select(Mapper.Map<ProductCategoryListItem>).ToList();
 
             foreach (var c in categories)
             {
