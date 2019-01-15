@@ -45,6 +45,8 @@ namespace KatlaSport.DataAccess.Migrations
         {
             var timestamp = DateTime.UtcNow;
             var creatorId = 1;
+            var manufacturerCode = "12345";
+            var price = 100;
 
             context.ProductCategories.AddOrUpdate(
                 i => i.Id,
@@ -90,7 +92,9 @@ namespace KatlaSport.DataAccess.Migrations
                     IsDeleted = false,
                     CreatedBy = creatorId,
                     LastUpdatedBy = creatorId,
-                    LastUpdated = timestamp
+                    LastUpdated = timestamp,
+                    ManufacturerCode = manufacturerCode,
+                    Price = price
                 },
                 new CatalogueProduct
                 {
@@ -101,7 +105,9 @@ namespace KatlaSport.DataAccess.Migrations
                     IsDeleted = false,
                     CreatedBy = creatorId,
                     LastUpdatedBy = creatorId,
-                    LastUpdated = timestamp
+                    LastUpdated = timestamp,
+                    ManufacturerCode = manufacturerCode,
+                    Price = price
                 },
                 new CatalogueProduct
                 {
@@ -112,7 +118,9 @@ namespace KatlaSport.DataAccess.Migrations
                     IsDeleted = false,
                     CreatedBy = creatorId,
                     LastUpdatedBy = creatorId,
-                    LastUpdated = timestamp
+                    LastUpdated = timestamp,
+                    ManufacturerCode = manufacturerCode,
+                    Price = price
                 },
                 new CatalogueProduct
                 {
@@ -123,7 +131,9 @@ namespace KatlaSport.DataAccess.Migrations
                     IsDeleted = false,
                     CreatedBy = creatorId,
                     LastUpdatedBy = creatorId,
-                    LastUpdated = timestamp
+                    LastUpdated = timestamp,
+                    ManufacturerCode = manufacturerCode,
+                    Price = price
                 });
 
             context.StoreHives.AddOrUpdate(
