@@ -8,20 +8,20 @@ namespace KatlaSport.WebApi.CustomFilters
 {
     public class CustomExceptionFilterAttribute : ExceptionFilterAttribute
     {
-        public override void OnException(HttpActionExecutedContext context)
+        public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
             // TODO Add logging here.
-            if (context.Exception is RequestedResourceNotFoundException)
+            if (actionExecutedContext.Exception is RequestedResourceNotFoundException)
             {
-                context.Response = new HttpResponseMessage(HttpStatusCode.NotFound);
+                actionExecutedContext.Response = new HttpResponseMessage(HttpStatusCode.NotFound);
             }
-            else if (context.Exception is RequestedResourceHasConflictException)
+            else if (actionExecutedContext.Exception is RequestedResourceHasConflictException)
             {
-                context.Response = new HttpResponseMessage(HttpStatusCode.Conflict);
+                actionExecutedContext.Response = new HttpResponseMessage(HttpStatusCode.Conflict);
             }
-            else if (context.Exception is Exception)
+            else if (actionExecutedContext.Exception is Exception)
             {
-                context.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
+                actionExecutedContext.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError);
             }
         }
     }
