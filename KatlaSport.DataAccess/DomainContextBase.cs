@@ -11,9 +11,9 @@ namespace KatlaSport.DataAccess
         where TDbContext : DbContext
     {
         private readonly ApplicationDbContext _dbContext;
-        private EntitySetCacheItem[] _entitySetCache;
+        private readonly EntitySetCacheItem[] _entitySetCache;
 
-        public DomainContextBase(ApplicationDbContext dbContext)
+        protected DomainContextBase(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
 
@@ -23,8 +23,6 @@ namespace KatlaSport.DataAccess
         public async Task<int> SaveChangesAsync() => await _dbContext.SaveChangesAsync();
 
         public async Task<int> SaveChangesAsync(CancellationToken cancellationToken) => await _dbContext.SaveChangesAsync(cancellationToken);
-
-        public void SaveChanges() => _dbContext.SaveChanges();
 
         protected IEntitySet<TEntityType> GetDbSet<TEntityType>()
             where TEntityType : class
