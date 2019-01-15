@@ -13,7 +13,10 @@ namespace KatlaSport.Services.ProductManagement
         /// </summary>
         /// <param name="start">A start.</param>
         /// <param name="amount">An amount.</param>
-        /// <returns>A <see cref="Task{List{ProductCategoryListItem}}"/>.</returns>
+        /// <returns>A <see>
+        ///         <cref>Task{List{ProductCategoryListItem}}</cref>
+        ///     </see>
+        ///     .</returns>
         Task<List<ProductCategoryListItem>> GetCategoriesAsync(int start, int amount);
 
         /// <summary>
