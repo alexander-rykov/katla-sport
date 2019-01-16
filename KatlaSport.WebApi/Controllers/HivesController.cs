@@ -59,6 +59,24 @@ namespace KatlaSport.WebApi.Controllers
             return Ok(hive);
         }
 
+        [HttpPost]
+        [Route("")]
+        [SwaggerResponse(HttpStatusCode.Created, Description = "Creates a new hive")]
+        [SwaggerResponse(HttpStatusCode.BadRequest)]
+        [SwaggerResponse(HttpStatusCode.Conflict)]
+        [SwaggerResponse(HttpStatusCode.InternalServerError)]
+        public async Task<IHttpActionResult> AddHive([FromBody] UpdateHiveRequest createHiveRequest)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var hive = await _hiveService.CreateHiveAsync(createHiveRequest);
+            var location = $"/api/hives/{hive.Id}";
+            return Created(location, hive);
+        }
+
         [HttpPut]
         [Route("{hiveId:int:min(1)}/status/{deletedStatus:bool}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Sets deleted status for an existed hive.")]

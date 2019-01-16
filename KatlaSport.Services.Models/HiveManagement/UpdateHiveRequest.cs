@@ -1,8 +1,11 @@
-﻿namespace KatlaSport.Services.HiveManagement
+﻿using FluentValidation.Attributes;
+
+namespace KatlaSport.Services.HiveManagement
 {
     /// <summary>
     /// Represents a request for creating and updating a hive.
     /// </summary>
+    [Validator(typeof(UpdateHiveRequestValidator))]
     public class UpdateHiveRequest
     {
         /// <summary>
