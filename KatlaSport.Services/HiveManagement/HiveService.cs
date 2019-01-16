@@ -82,7 +82,6 @@ namespace KatlaSport.Services.HiveManagement
                 throw new RequestedResourceHasConflictException("code");
             }
 
-            // TODO: Check with breakpoint.
             dbHives = await _context.Hives.Where(p => p.Id == hiveId).ToArrayAsync();
             if (dbHives.Length == 0)
             {

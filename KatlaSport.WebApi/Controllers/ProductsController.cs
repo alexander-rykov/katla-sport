@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using KatlaSport.Services.ProductManagement;
 using KatlaSport.WebApi.CustomFilters;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Web.Http;
 using Swashbuckle.Swagger.Annotations;
 
@@ -14,7 +15,7 @@ namespace KatlaSport.WebApi.Controllers
     [ApiVersion("1.0")]
     [RoutePrefix("api/products")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [CustomExceptionFilter]
+    [ServiceFilter(typeof(CustomExceptionFilterAttribute))]
     [SwaggerResponseRemoveDefaults]
     public class ProductsController : ApiController
     {
@@ -25,8 +26,8 @@ namespace KatlaSport.WebApi.Controllers
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
         }
 
-        [HttpGet]
-        [Route("")]
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("")]
         [SwaggerResponse(HttpStatusCode.OK, Description = "Returns a list of products.", Type = typeof(ProductListItem[]))]
         [SwaggerResponse(HttpStatusCode.BadRequest)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
@@ -34,7 +35,7 @@ namespace KatlaSport.WebApi.Controllers
         {
             if (start < 0)
             {
-                return BadRequest("start");
+                return BadRequest($"start");
             }
             if (amount < 0)
             {
@@ -45,8 +46,8 @@ namespace KatlaSport.WebApi.Controllers
             return Ok(products);
         }
 
-        [HttpGet]
-        [Route("{id:int:min(1)}")]
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("{id:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.OK, Description = "Returns a product.", Type = typeof(Product))]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
@@ -56,13 +57,13 @@ namespace KatlaSport.WebApi.Controllers
             return Ok(product);
         }
 
-        [HttpPost]
-        [Route("")]
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("")]
         [SwaggerResponse(HttpStatusCode.Created, Description = "Creates a new product.")]
         [SwaggerResponse(HttpStatusCode.BadRequest)]
         [SwaggerResponse(HttpStatusCode.Conflict)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
-        public async Task<IHttpActionResult> AddProduct([FromBody] UpdateProductRequest createRequest)
+        public async Task<IHttpActionResult> AddProduct([System.Web.Http.FromBody] UpdateProductRequest createRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -74,14 +75,14 @@ namespace KatlaSport.WebApi.Controllers
             return Created<Product>(location, product);
         }
 
-        [HttpPut]
-        [Route("{id:int:min(1)}")]
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("{id:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Updates an existed product.")]
         [SwaggerResponse(HttpStatusCode.BadRequest)]
         [SwaggerResponse(HttpStatusCode.Conflict)]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
-        public async Task<IHttpActionResult> UpdateProduct([FromUri] int id, [FromBody] UpdateProductRequest updateRequest)
+        public async Task<IHttpActionResult> UpdateProduct([FromUri] int id, [System.Web.Http.FromBody] UpdateProductRequest updateRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -92,8 +93,8 @@ namespace KatlaSport.WebApi.Controllers
             return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
         }
 
-        [HttpDelete]
-        [Route("{id:int:min(1)}")]
+        [System.Web.Http.HttpDelete]
+        [System.Web.Http.Route("{id:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Deletes an existed product.")]
         [SwaggerResponse(HttpStatusCode.BadRequest)]
         [SwaggerResponse(HttpStatusCode.Conflict)]
@@ -105,8 +106,8 @@ namespace KatlaSport.WebApi.Controllers
             return ResponseMessage(Request.CreateResponse(HttpStatusCode.NoContent));
         }
 
-        [HttpPut]
-        [Route("{id:int:min(1)}/status/{deletedStatus:bool}")]
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("{id:int:min(1)}/status/{deletedStatus:bool}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Sets deleted status for an existed product category.")]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]

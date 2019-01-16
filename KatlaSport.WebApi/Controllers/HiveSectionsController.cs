@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using KatlaSport.Services.HiveManagement;
 using KatlaSport.WebApi.CustomFilters;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Web.Http;
 using Swashbuckle.Swagger.Annotations;
 
@@ -14,7 +15,7 @@ namespace KatlaSport.WebApi.Controllers
     [ApiVersion("1.0")]
     [RoutePrefix("api/sections")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [CustomExceptionFilter]
+    [ServiceFilter(typeof(CustomExceptionFilterAttribute))]
     [SwaggerResponseRemoveDefaults]
     public class HiveSectionsController : ApiController
     {
@@ -25,8 +26,8 @@ namespace KatlaSport.WebApi.Controllers
             _hiveSectionService = hiveSectionService ?? throw new ArgumentNullException(nameof(hiveSectionService));
         }
 
-        [HttpGet]
-        [Route("")]
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("")]
         [SwaggerResponse(HttpStatusCode.OK, Description = "Returns a list of hive sections.", Type = typeof(HiveSectionListItem[]))]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
         public async Task<IHttpActionResult> GetHiveSections()
@@ -35,8 +36,8 @@ namespace KatlaSport.WebApi.Controllers
             return Ok(hives);
         }
 
-        [HttpGet]
-        [Route("{hiveSectionId:int:min(1)}")]
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("{hiveSectionId:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.OK, Description = "Returns a hive section.", Type = typeof(HiveSection))]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
@@ -46,8 +47,8 @@ namespace KatlaSport.WebApi.Controllers
             return Ok(hive);
         }
 
-        [HttpPut]
-        [Route("{hiveSectionId:int:min(1)}/status/{deletedStatus:bool}")]
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("{hiveSectionId:int:min(1)}/status/{deletedStatus:bool}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Sets deleted status for an existed hive section.")]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]

@@ -6,15 +6,17 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using KatlaSport.Services.HiveManagement;
 using KatlaSport.WebApi.CustomFilters;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Web.Http;
 using Swashbuckle.Swagger.Annotations;
+
 
 namespace KatlaSport.WebApi.Controllers
 {
     [ApiVersion("1.0")]
     [RoutePrefix("api/hives")]
     [EnableCors(origins: "*", headers: "*", methods: "*")]
-    [CustomExceptionFilter]
+    [ServiceFilter(typeof(CustomExceptionFilterAttribute))]
     [SwaggerResponseRemoveDefaults]
     public class HivesController : ApiController
     {
@@ -27,8 +29,8 @@ namespace KatlaSport.WebApi.Controllers
             _hiveSectionService = hiveSectionService ?? throw new ArgumentNullException(nameof(hiveSectionService));
         }
 
-        [HttpGet]
-        [Route("")]
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("")]
         [SwaggerResponse(HttpStatusCode.OK, Description = "Returns a list of hives.", Type = typeof(HiveListItem[]))]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
         public async Task<IHttpActionResult> GetHivesAsync()
@@ -37,8 +39,8 @@ namespace KatlaSport.WebApi.Controllers
             return Ok(hives);
         }
 
-        [HttpGet]
-        [Route("{hiveId:int:min(1)}")]
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("{hiveId:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.OK, Description = "Returns a hive.", Type = typeof(Hive))]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
@@ -48,8 +50,8 @@ namespace KatlaSport.WebApi.Controllers
             return Ok(hive);
         }
 
-        [HttpGet]
-        [Route("{hiveId:int:min(1)}/sections")]
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("{hiveId:int:min(1)}/sections")]
         [SwaggerResponse(HttpStatusCode.OK, Description = "Returns a list of hive sections for specified hive.", Type = typeof(HiveSectionListItem))]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
@@ -59,13 +61,13 @@ namespace KatlaSport.WebApi.Controllers
             return Ok(hive);
         }
 
-        [HttpPost]
-        [Route("")]
+        [System.Web.Http.HttpPost]
+        [System.Web.Http.Route("")]
         [SwaggerResponse(HttpStatusCode.Created, Description = "Creates a new hive")]
         [SwaggerResponse(HttpStatusCode.BadRequest)]
         [SwaggerResponse(HttpStatusCode.Conflict)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
-        public async Task<IHttpActionResult> AddHive([FromBody] UpdateHiveRequest createHiveRequest)
+        public async Task<IHttpActionResult> AddHive([System.Web.Http.FromBody] UpdateHiveRequest createHiveRequest)
         {
             if (!ModelState.IsValid)
             {
@@ -77,8 +79,8 @@ namespace KatlaSport.WebApi.Controllers
             return Created(location, hive);
         }
 
-        [HttpPut]
-        [Route("{hiveId:int:min(1)}/status/{deletedStatus:bool}")]
+        [System.Web.Http.HttpPut]
+        [System.Web.Http.Route("{hiveId:int:min(1)}/status/{deletedStatus:bool}")]
         [SwaggerResponse(HttpStatusCode.NoContent, Description = "Sets deleted status for an existed hive.")]
         [SwaggerResponse(HttpStatusCode.NotFound)]
         [SwaggerResponse(HttpStatusCode.InternalServerError)]
