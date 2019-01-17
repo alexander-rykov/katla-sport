@@ -6,23 +6,19 @@
       <input type="text" class="form-control" id="id" aria-describedby="idLabel" [(ngModel)]="hive.id" name="id" #id="ngModel"
         readonly>
     </div>
-
     <div class="form-group">
       <label for="name" id="nameLabel">Hive Name</label>
       <input type="text" class="form-control" id="name" aria-describedby="nameLabel" minlength="4" maxlength="60"
         required [(ngModel)]="hive.name" name="name" #name="ngModel">
-
       <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
         <div *ngIf="name.errors.required">Hive Name is required.</div>
         <div *ngIf="name.errors.minlength">Hive Name must be at least 4 characters long.</div>
       </div>
     </div>
-
     <div class="form-group">
       <label for="code" id="codeLabel">Hive Code</label>
       <input type="text" class="form-control" id="code" aria-describedby="codeLabel" minlength="5" maxlength="5"
         required [(ngModel)]="hive.code" name="code" #code="ngModel">
-
       <div *ngIf="code.invalid && (code.dirty || code.touched)" class="alert alert-danger">
         <div *ngIf="code.errors.required">Hive Code is required.</div>
         <div *ngIf="code.errors.minlength">Hive code must be at least 5 characters long.</div>

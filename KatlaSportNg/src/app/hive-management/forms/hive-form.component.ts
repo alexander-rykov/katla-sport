@@ -10,7 +10,7 @@ import { Hive } from '../models/hive';
 })
 export class HiveFormComponent implements OnInit {
 
-  hive = new Hive(0, "", "", "", false, "");
+  hive = new Hive(0, "Add new name", "AABBC", "Add address", false, "");
   existed = false;
 
   constructor(
@@ -37,10 +37,12 @@ export class HiveFormComponent implements OnInit {
   
   onSubmit() {
     if (this.existed) {
-      this.hiveService.updateHive(this.hive).subscribe(c => this.navigateToHives);
+      this.hiveService.updateHive(this.hive)
+      .subscribe(c => this.navigateToHives);
     } 
     else {
-      this.hiveService.addHive(this.hive).subscribe(c => this.navigateToHives);
+      this.hiveService.addHive(this.hive)
+      .subscribe(c => this.navigateToHives);
     }
   }
 
