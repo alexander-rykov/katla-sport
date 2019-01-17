@@ -109,8 +109,7 @@ namespace KatlaSport.Services.HiveManagement
 
             var dbHive = dbHives[0];
             var storeHive = !dbHive.IsDeleted
-                ? throw new RequestedResourceHasConflictException(
-                    "Hive's status set as False.")
+                ? throw new RequestedResourceHasConflictException("Hive's status set as False.")
                 : _context.Hives.Remove(dbHive);
 
             await _context.SaveChangesAsync();
