@@ -101,19 +101,18 @@ namespace KatlaSport.Services.HiveManagement
         /// <inheritdoc/>
         public async Task DeleteHiveAsync(int hiveId)
         {
-            var dbHives = await _context.Hives.Where(p => p.Id == hiveId).ToArrayAsync();
+            var dbHives = await _context.Hives.Where(p => p.Id == hiveId && p.Id >= 1).ToArrayAsync();
             if (dbHives.Length == 0)
             {
                 throw new RequestedResourceNotFoundException();
             }
 
             var dbHive = dbHives[0];
-            if (dbHive.IsDeleted == false)
-            {
-                throw new RequestedResourceHasConflictException();
-            }
+            var storeHive = !dbHive.IsDeleted
+                ? throw new RequestedResourceHasConflictException(
+                    "Hive's status set as False.")
+                : _context.Hives.Remove(dbHive);
 
-            _context.Hives.Remove(dbHive);
             await _context.SaveChangesAsync();
         }
 
