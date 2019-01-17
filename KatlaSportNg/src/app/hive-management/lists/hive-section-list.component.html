@@ -14,8 +14,14 @@
           <th scope="row">{{hiveSection.code}}</th> 
           <td>
             <span class="btn-toolbar" role="toolbar" aria-label="Hive action buttons" style="display: block; white-space:nowrap;">
-              <div class="btn-group" role="group" aria-label="Edit group">
+              <div class="btn-group mr-2" role="group" aria-label="Edit group">
                 <button routerLink="/section/{{this.hiveId}}" type="button" class="btn btn-primary">Edit</button>
+              </div>
+              <div class="btn-group mr-2" role="group" aria-label="Delete group" *ngIf = "!hiveSection.isDeleted" (click)="onDelete(hiveSection.id)">
+                <button type="button" type="button" class="btn btn-danger">Delete</button>
+              </div>
+              <div class="btn-group" role="group" aria-label="Edit group" *ngIf = "hiveSection.isDeleted" (click)="onUndelete(hiveSection.id)">
+                <button type="button" type="button" class="btn btn-primary">Undelete</button>
               </div>
             </span>
           </td>
