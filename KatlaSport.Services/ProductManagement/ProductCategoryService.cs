@@ -122,7 +122,7 @@ namespace KatlaSport.Services.ProductManagement
         /// <inheritdoc/>
         public async Task SetStatusAsync(int categoryId, bool deletedStatus)
         {
-            var dbCategories = await _context.Categories.Where(c => categoryId == c.Id).ToArrayAsync();
+            var dbCategories = await _context.Categories.Where(hs => categoryId == hs.Id).ToArrayAsync();
 
             if (dbCategories.Length == 0)
             {
