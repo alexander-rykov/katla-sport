@@ -61,7 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="**\*.cs" Exclude="obj\Debug\*.cs;obj\Release\*.cs" />
-    <Compile Include="HiveManagement\UpdateHiveSectionRequest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
