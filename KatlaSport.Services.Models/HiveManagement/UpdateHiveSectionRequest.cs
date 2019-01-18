@@ -1,8 +1,12 @@
-﻿namespace KatlaSport.Services.HiveManagement
+﻿using System.ComponentModel.DataAnnotations;
+using FluentValidation.Attributes;
+
+namespace KatlaSport.Services.HiveManagement
 {
     /// <summary>
     /// Represents a request for creating and updating a hive section.
     /// </summary>
+    [Validator(typeof(UpdateHiveSectionRequestValidator))]
     public class UpdateHiveSectionRequest
     {
         /// <summary>
