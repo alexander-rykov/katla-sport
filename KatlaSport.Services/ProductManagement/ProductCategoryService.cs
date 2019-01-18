@@ -94,7 +94,6 @@ namespace KatlaSport.Services.ProductManagement
             dbCategory.LastUpdatedBy = _userContext.UserId;
 
             await _context.SaveChangesAsync();
-
             dbCategories = await _context.Categories.Where(c => c.Id == categoryId).ToArrayAsync();
             return dbCategories.Select(c => Mapper.Map<ProductCategory>(c)).FirstOrDefault();
         }

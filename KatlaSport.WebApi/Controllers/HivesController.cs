@@ -75,8 +75,8 @@ namespace KatlaSport.WebApi.Controllers
             }
 
             var hive = await _hiveService.CreateHiveAsync(createHiveRequest);
-            var location = $"/api/hives/{hive.Id}";
-            return Created(location, hive);
+            var location =string.Format("/api/hives/{0}",hive.Id);
+            return Created<Hive>(location, hive);
         }
 
         [System.Web.Http.HttpPut]

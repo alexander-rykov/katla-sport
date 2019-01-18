@@ -84,19 +84,21 @@ namespace KatlaSport.Services.HiveManagement
             }
 
             dbHives = await _context.Hives.Where(p => p.Id == hiveId).ToArrayAsync();
-            if (dbHives.Length == 0)
+            //var dbHive = dbHives.FirstOrDefault();
+            var dbHive = dbHives[0];
+            if (dbHive == null)
             {
                 throw new RequestedResourceNotFoundException();
             }
-
-            var dbHive = dbHives[0];
 
             Mapper.Map(updateRequest, dbHive);
             dbHive.LastUpdatedBy = _userContext.UserId;
 
             await _context.SaveChangesAsync();
+            dbHives = await _context.Hives.Where(c => c.Id == hiveId).ToArrayAsync();
+            return dbHives.Select(c => Mapper.Map<Hive>(c)).FirstOrDefault();
 
-            return Mapper.Map<Hive>(dbHive);
+            //return Mapper.Map<Hive>(dbHive);
         }
 
         /// <inheritdoc/>
