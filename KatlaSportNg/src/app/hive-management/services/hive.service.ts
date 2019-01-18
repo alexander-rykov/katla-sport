@@ -31,7 +31,6 @@ export class HiveService {
   }
 
   updateHive(hive: Hive): Observable<Object> {
-    const params = new HttpParams().set('hive_id',hive.id.toString());
     return this.http.put<Object>(`${this.url}${hive.id}`,hive);
   }
 
