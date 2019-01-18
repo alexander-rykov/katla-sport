@@ -77,14 +77,14 @@ namespace KatlaSport.Services.HiveManagement
         public async Task<Hive> UpdateHiveAsync(int hiveId, UpdateHiveRequest updateRequest)
         {
             var dbHives = await _context.Hives.Where(p => p.Code == updateRequest.Code && p.Id != hiveId)
-                .ToArrayAsync().ConfigureAwait(false);
+                .ToArrayAsync();
             if (dbHives.Length > 0)
             {
                 throw new RequestedResourceHasConflictException("code");
             }
 
             dbHives = await _context.Hives.Where(p => p.Id == hiveId).ToArrayAsync();
-            //var dbHive = dbHives.FirstOrDefault();
+
             var dbHive = dbHives[0];
             if (dbHive == null)
             {
@@ -96,9 +96,7 @@ namespace KatlaSport.Services.HiveManagement
 
             await _context.SaveChangesAsync();
             dbHives = await _context.Hives.Where(c => c.Id == hiveId).ToArrayAsync();
-            return dbHives.Select(c => Mapper.Map<Hive>(c)).FirstOrDefault();
-
-            //return Mapper.Map<Hive>(dbHive);
+            return dbHives.Select(Mapper.Map<Hive>).FirstOrDefault();
         }
 
         /// <inheritdoc/>
