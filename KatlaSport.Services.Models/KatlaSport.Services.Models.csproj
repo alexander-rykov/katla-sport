@@ -60,7 +60,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="**\*.cs" Exclude="obj\Debug\*.cs;obj\Release\*.cs" />
+    <Compile Include="HiveManagement\Hive.cs" />
+    <Compile Include="HiveManagement\HiveListItem.cs" />
+    <Compile Include="HiveManagement\HiveSection.cs" />
+    <Compile Include="HiveManagement\HiveSectionListItem.cs" />
+    <Compile Include="HiveManagement\IHiveSectionService.cs" />
+    <Compile Include="HiveManagement\IHiveService.cs" />
+    <Compile Include="HiveManagement\UpdateHiveRequest.cs" />
+    <Compile Include="HiveManagement\UpdateHiveRequestValidator.cs" />
+    <Compile Include="HiveManagement\UpdateHiveSectionRequest.cs" />
+    <Compile Include="HiveManagement\UpdateHiveSectionRequestValidator.cs" />
+    <Compile Include="ProductManagement\IProductCatalogueService.cs" />
+    <Compile Include="ProductManagement\IProductCategoryService.cs" />
+    <Compile Include="ProductManagement\Product.cs" />
+    <Compile Include="ProductManagement\ProductCategory.cs" />
+    <Compile Include="ProductManagement\ProductCategoryListItem.cs" />
+    <Compile Include="ProductManagement\ProductCategoryProductListItem.cs" />
+    <Compile Include="ProductManagement\ProductListItem.cs" />
+    <Compile Include="ProductManagement\UpdateProductCategoryRequest.cs" />
+    <Compile Include="ProductManagement\UpdateProductCategoryRequestValidator.cs" />
+    <Compile Include="ProductManagement\UpdateProductRequest.cs" />
+    <Compile Include="ProductManagement\UpdateProductRequestValidator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
