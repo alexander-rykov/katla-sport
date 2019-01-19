@@ -38,4 +38,7 @@ export class ProductService {
   deleteProduct(productId: number): Observable<Object> {
     return this.http.delete<Object>(`${this.url}${productId}`);
   }
+  setProductStatus(productId: number, deletedStatus: boolean): Observable<Object> {
+    return this.http.put<Object>(`${this.url}${productId}/status/${deletedStatus}`,null);
+  }
 }

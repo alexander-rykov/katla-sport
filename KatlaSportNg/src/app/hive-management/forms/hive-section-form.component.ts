@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HiveSectionService } from '../services/hive-section.service';
 import { HiveSection } from '../models/hive-section';
+import { HiveSectionListItem } from '../models/hive-section-list-item';
+import { HiveService } from '../services/hive.service';
 
 @Component({
   selector: 'app-hive-section-form',
@@ -12,11 +14,13 @@ export class HiveSectionFormComponent implements OnInit {
   hiveId : number;
   hiveSection = new HiveSection(0, "", "", 0 ,false, "");
   existed = false;
+  hives : HiveSectionListItem[];
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private hiveSectionService: HiveSectionService
+    private hiveSectionService: HiveSectionService,
+    private hiveService : HiveService
   ) { }
 
   ngOnInit() {
@@ -29,6 +33,7 @@ export class HiveSectionFormComponent implements OnInit {
         return;
       }
       this.hiveSectionService.getHiveSection(p['sectionId']).subscribe(s => this.hiveSection = s);
+      this.hiveService.getHives().subscribe(hss => this.hives = hss);
       this.existed = true;
     });
   }

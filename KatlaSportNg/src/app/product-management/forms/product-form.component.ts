@@ -56,9 +56,11 @@ export class ProductFormComponent implements OnInit {
   }
 
   onDelete() {
+    this.productService.setProductStatus(this.product.id,true).subscribe(p => this.product.isDeleted = true);
   }
 
   onUndelete() {
+    this.productService.setProductStatus(this.product.id,false).subscribe(p => this.product.isDeleted = false);
   }
 
   onPurge() {

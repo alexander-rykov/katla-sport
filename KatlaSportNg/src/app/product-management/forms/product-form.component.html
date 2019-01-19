@@ -67,7 +67,7 @@
         <button type="submit" class="btn btn-primary">Save</button>
       </div>
       <div class="btn-group mr-1" role="group" aria-label="Delete group" *ngIf="existed && !product.isDeleted">
-        <button type="button" class="btn btn-warning" (click)="onDelete()">Delete</button>
+        <button type="button" class="btn btn-danger" (click)="onDelete()">Delete</button>
       </div>
       <div class="btn-group" role="group" aria-label="Purge group" *ngIf="existed && product.isDeleted">
         <button type="button" class="btn btn-warning" (click)="onUndelete()">Undelete</button>

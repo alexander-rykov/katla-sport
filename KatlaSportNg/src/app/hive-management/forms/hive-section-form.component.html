@@ -27,15 +27,13 @@
       </div>
     </div>
     <div class="form-group" *ngIf = 'existed'>
-      <label for="storeHiveId" id="storeHiveIdLabel">Hive Id</label>
-      <input type="number" class="form-control" id="storeHiveId" aria-describedby="storeHiveIdLabel" required [(ngModel)]="hiveSection.storeHiveId"
-        name="storeHiveId" #storeHiveId ="ngModel">
-      <div *ngIf="storeHiveId.invalid && (storeHiveId.dirty || storeHiveId.touched)" class="alert alert-danger">
-        <div *ngIf="storeHiveId.errors.required">Hive Code is required.</div>
-        <div *ngIf="storeHiveId.errors.number">Hive Code must be greater than zero.</div>
-      </div>
+        <label for="storeHiveId" id="storeHiveIdLabel">Store Hive</label>
+        <select class="custom-select" [(ngModel)]="hiveSection.storeHiveId" id="storeHiveId" aria-describedby="storeHiveIdLabel" #storeHiveId="ngModel"
+        [ngModelOptions]="{standalone: true}">
+        <option *ngFor="let hive of hives" [ngValue]="hive.id">{{hive.id}}. {{hive.name}} , {{hive.code}}</option>
+    </select>
     </div>
-    <div class="form-group" *ngIf='existed'>
+      <div class="form-group" *ngIf='existed'>
       <label for="lastUpdated" id="lastUpdatedLabel">Last Update</label>
       <input type="text" class="form-control" id="lastUpdated" aria-describedby="lastUpdatedLabel" required [(ngModel)]="hiveSection.lastUpdated"
         name="lastUpdated" #lastUpdated="ngModel" readonly>
