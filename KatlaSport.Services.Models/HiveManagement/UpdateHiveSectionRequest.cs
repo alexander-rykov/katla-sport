@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using FluentValidation.Attributes;
+﻿using FluentValidation.Attributes;
 
 namespace KatlaSport.Services.HiveManagement
 {
@@ -10,12 +9,17 @@ namespace KatlaSport.Services.HiveManagement
     public class UpdateHiveSectionRequest
     {
         /// <summary>
-        /// Gets or sets a store hive name.
+        /// Gets or sets a hive id.
+        /// </summary>
+        public int HiveId { get; set; }
+
+        /// <summary>
+        /// Gets or sets a hive section name.
         /// </summary>
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets a store hive code.
+        /// Gets or sets a hive section code.
         /// </summary>
         public string Code { get; set; }
     }

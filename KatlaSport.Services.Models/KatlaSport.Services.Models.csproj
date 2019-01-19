@@ -22,6 +22,9 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>bin\Debug\KatlaSport.Services.Models.xml</DocumentationFile>
     <CodeAnalysisRuleSet>..\CustomLab.ruleset</CodeAnalysisRuleSet>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <LangVersion>default</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
