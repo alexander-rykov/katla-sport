@@ -21,15 +21,17 @@ const routes: Routes = [
   { path: 'products', component: ProductListComponent },
   { path: 'product/:id', component: ProductFormComponent },
   { path: 'category/:categoryId/product/:id', component: ProductFormComponent },
+  { path: 'hive/:hiveId/section/:id', component: HiveSectionFormComponent },
   { path: 'hives', component: HiveListComponent },
   { path: 'hive', component: HiveFormComponent },
   { path: 'hive/:id', component: HiveFormComponent },
   { path: 'hive/:id/sections', component: HiveSectionListComponent },
+  { path: 'hive/:hiveId/section', component: HiveSectionFormComponent },
   { path: 'section/:id', component: HiveSectionFormComponent },
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }

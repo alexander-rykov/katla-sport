@@ -11,12 +11,13 @@ namespace KatlaSport.Services.HiveManagement
         {
             CreateMap<DataAccessHive, HiveListItem>();
             CreateMap<DataAccessHive, Hive>();
+            CreateMap<DataAccessHiveSection, HiveSectionListItem>();
+            CreateMap<DataAccessHiveSection, HiveSection>();
+
             CreateMap<UpdateHiveRequest, DataAccessHive>()
                 .ForMember(
                     r => r.LastUpdated,
                     opt => opt.MapFrom(_ => DateTime.UtcNow));
-            CreateMap<DataAccessHiveSection, HiveSectionListItem>();
-            CreateMap<DataAccessHiveSection, HiveSection>();
             CreateMap<UpdateHiveSectionRequest, DataAccessHiveSection>()
                 .ForMember(
                     r => r.LastUpdated,

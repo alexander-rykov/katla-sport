@@ -11,6 +11,11 @@
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or sets a hive identifier.
+        /// </summary>
+        public int StoreHiveId { get; set; }
+
+        /// <summary>
         /// Gets or sets a hive section name.
         /// </summary>
         public string Name { get; set; }
