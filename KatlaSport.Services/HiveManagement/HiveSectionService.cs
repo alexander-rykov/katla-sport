@@ -66,7 +66,6 @@ namespace KatlaSport.Services.HiveManagement
                 throw new RequestedResourceHasConflictException("code");
             }
 
-            // Gives a volue of 0 StoreHive[0]
             var dbHives = await _context.Hives.Where(h => h.Id == createRequest.StoreHiveId).ToArrayAsync();
             if (dbHives.Length == 0)
             {
