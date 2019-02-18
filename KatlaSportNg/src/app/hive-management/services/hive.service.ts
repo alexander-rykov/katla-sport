@@ -5,12 +5,14 @@ import { Observable } from 'rxjs';
 import { Hive } from '../models/hive';
 import { HiveListItem } from '../models/hive-list-item';
 import { HiveSectionListItem } from '../models/hive-section-list-item';
+import { HiveSectionProductListItem } from '../models/hive-section-product-list-item';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HiveService {
   private url = environment.apiUrl + 'api/hives/';
+  private sectionUrl = environment.apiUrl + 'api/sections/';
 
   constructor(private http: HttpClient) { }
 
@@ -25,6 +27,11 @@ export class HiveService {
   getHiveSections(hiveId: number): Observable<Array<HiveSectionListItem>> {
     return this.http.get<Array<HiveSectionListItem>>(`${this.url}${hiveId}/sections`);
   }
+
+  getSectionProducts(productSectionId: number): Observable<Array<HiveSectionProductListItem>> {
+    return this.http.get<Array<HiveSectionProductListItem>>(`${this.sectionUrl}${productSectionId}/products`);
+  }
+
 
   addHive(hive: Hive): Observable<Hive> {
     return this.http.post<Hive>(this.url, hive);
