@@ -11,7 +11,8 @@ import { HiveService } from 'app/hive-management/services/hive.service';
 export class HiveSectionProductListComponent implements OnInit {
 
   sectionId: number;
-  products: HiveSectionProductListItem[];
+  sectionProducts: HiveSectionProductListItem[];
+  hiveId: number;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,7 +23,15 @@ export class HiveSectionProductListComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(p => {
       this.sectionId = p['id'];
-      this.productService.getSectionProducts(p['id']).subscribe(p => this.products = p);
+      this.hiveId = p['hiveId'];
+      this.productService.getSectionProducts(p['id']).subscribe(p => this.sectionProducts = p);
     });
+  }
+  navigateToSections() {
+    this.router.navigate([`hive/${this.hiveId}/sections`]);
+  }
+
+  onCancel() {
+    this.navigateToSections();
   }
 }

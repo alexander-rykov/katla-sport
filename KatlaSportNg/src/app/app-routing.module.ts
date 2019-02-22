@@ -29,7 +29,7 @@ const routes: Routes = [
   { path: 'hive/:id/sections', component: HiveSectionListComponent },
   { path: 'hive/:hiveId/section', component: HiveSectionFormComponent },
   { path: 'section/:id', component: HiveSectionFormComponent },
-  { path: 'section/:id/products', component: HiveSectionProductListComponent },
+  { path: 'hive/:hiveId/section/:id/products', component: HiveSectionProductListComponent },
 ];
 
 @NgModule({
