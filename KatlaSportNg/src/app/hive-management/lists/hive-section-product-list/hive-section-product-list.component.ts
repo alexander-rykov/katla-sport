@@ -30,8 +30,4 @@ export class HiveSectionProductListComponent implements OnInit {
   navigateToSections() {
     this.router.navigate([`hive/${this.hiveId}/sections`]);
   }
-
-  onCancel() {
-    this.navigateToSections();
-  }
 }

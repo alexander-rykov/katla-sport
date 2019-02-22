@@ -131,6 +131,18 @@ namespace KatlaSport.DataAccess.Migrations
                     LastUpdatedBy = creatorId,
                     LastUpdated = timestamp,
                     ManufacturerCode = manCode
+                },
+                new CatalogueProduct
+                {
+                    Id = 5,
+                    Name = "Engine electrical",
+                    Code = "BYEL1",
+                    CategoryId = 3,
+                    IsDeleted = false,
+                    CreatedBy = creatorId,
+                    LastUpdatedBy = creatorId,
+                    LastUpdated = timestamp,
+                    ManufacturerCode = manCode
                 });
 
             context.StoreHives.AddOrUpdate(
