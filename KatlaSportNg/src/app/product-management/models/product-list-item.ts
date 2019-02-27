@@ -5,6 +5,7 @@ export class ProductListItem {
         public name: string,
         public isDeleted: boolean,
         public categoryCode: string,
-        public categoryId: number
+        public categoryId: number,
+        public price: number,
     ) { }
 }
