@@ -18,6 +18,8 @@ namespace KatlaSport.Services
             builder.RegisterType<HiveManagement.HiveService>().As<HiveManagement.IHiveService>();
             builder.RegisterType<HiveManagement.HiveSectionService>().As<HiveManagement.IHiveSectionService>();
             builder.RegisterType<ProductStoreManagement.StoreProductService>().As<ProductManagement.IStoreProductService>();
+            builder.RegisterType<ProductManagement.ProductSectionCategoryService>()
+                .As<ProductManagement.IProductSectionCategoryService>();
             builder.RegisterType<UserContext>().As<IUserContext>();
         }
     }

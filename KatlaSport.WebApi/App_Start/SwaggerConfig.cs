@@ -92,7 +92,7 @@ namespace KatlaSport.WebApi
                         // You can also specify a custom sort order for groups (as defined by "GroupActionsBy") to dictate
                         // the order in which operations are listed. For example, if the default grouping is in place
                         // (controller name) and you specify a descending alphabetic sort order, then actions from a
-                        // StoreItemsController will be listed before those from a CustomersController. This is typically
+                        // StoreController will be listed before those from a CustomersController. This is typically
                         // used to customize the order of groupings in the swagger-ui.
                         //
                         //c.OrderActionGroupsBy(new DescendingAlphabeticComparer());

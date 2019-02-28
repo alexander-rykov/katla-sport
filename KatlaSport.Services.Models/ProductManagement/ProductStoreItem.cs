@@ -1,4 +1,6 @@
-﻿namespace KatlaSport.Services.ProductManagement
+﻿using KatlaSport.Services.HiveManagement;
+
+namespace KatlaSport.Services.ProductManagement
 {
     /// <summary>
     /// Represents a store item.
@@ -19,6 +21,16 @@
         /// Gets or sets a location ID.
         /// </summary>
         public int HiveSectionId { get; set; }
+
+        /// <summary>
+        /// Gets or sets a product.
+        /// </summary>
+        public virtual ProductListItem Product { get; set; }
+
+        /// <summary>
+        /// Gets or sets a location.
+        /// </summary>
+        public virtual HiveSection HiveSection { get; set; }
 
         /// <summary>
         /// Gets or sets a quantity of items of certain product in the location.

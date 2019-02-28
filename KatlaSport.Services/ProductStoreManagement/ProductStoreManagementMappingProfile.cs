@@ -10,6 +10,7 @@ namespace KatlaSport.Services.ProductStoreManagement
         {
             CreateMap<StoreItem, ProductStoreItem>();
             CreateMap<StoreItem, ProductListItem>();
+            CreateMap<ProductStoreItem, ProductListItem>();
         }
     }
 }
