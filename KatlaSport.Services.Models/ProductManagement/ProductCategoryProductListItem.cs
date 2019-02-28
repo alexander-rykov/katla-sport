@@ -23,6 +23,11 @@ namespace KatlaSport.Services.ProductManagement
         public string Code { get; set; }
 
         /// <summary>
+        /// Gets or sets a product price.
+        /// </summary>
+        public decimal Price { get; set; }
+
+        /// <summary>
         /// Gets or sets a value indicating whether a product is deleted.
         /// </summary>
         public bool IsDeleted { get; set; }
