@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.Entity.Migrations;
-using System.Diagnostics;
 using KatlaSport.DataAccess.CustomerCatalogue;
 using KatlaSport.DataAccess.ProductCatalogue;
 using KatlaSport.DataAccess.ProductStore;
@@ -40,7 +39,6 @@ namespace KatlaSport.DataAccess.Migrations
             SeedDatabase(context);
         }
 
-        [Conditional("DEBUG")]
         private void SeedDatabase(ApplicationDbContext context)
         {
             var timestamp = DateTime.UtcNow;

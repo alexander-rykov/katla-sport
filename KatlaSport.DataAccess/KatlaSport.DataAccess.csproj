@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201805190719490_InitialCreate.Designer.cs">
       <DependentUpon>201805190719490_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907291055259_AddCategoryDescription.cs" />
+    <Compile Include="Migrations\201907291055259_AddCategoryDescription.Designer.cs">
+      <DependentUpon>201907291055259_AddCategoryDescription.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +81,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201805190719490_InitialCreate.resx">
       <DependentUpon>201805190719490_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907291055259_AddCategoryDescription.resx">
+      <DependentUpon>201907291055259_AddCategoryDescription.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
