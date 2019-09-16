@@ -60,5 +60,10 @@ namespace KatlaSport.DataAccess.ProductCatalogue
         /// Gets or sets a collection of hive sections for the product category.
         /// </summary>
         public virtual ICollection<StoreHiveSectionCategory> Sections { get; set; }
+
+        /// <summary>
+        /// Gets or sets a product category description.
+        /// </summary>
+        public string Description { get; set; }
     }
 }
