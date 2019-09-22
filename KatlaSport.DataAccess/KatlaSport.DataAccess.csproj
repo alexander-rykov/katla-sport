@@ -65,9 +65,15 @@
     <Compile Include="Migrations\201805190719490_InitialCreate.Designer.cs">
       <DependentUpon>201805190719490_InitialCreate.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\201909221913135_AddCategoryDescription.cs" />
     <Compile Include="Migrations\201909221913135_AddCategoryDescription.Designer.cs">
       <DependentUpon>201909221913135_AddCategoryDescription.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\201909221647445_AddCategoryDescription.cs" />
+    <Compile Include="Migrations\201909221647445_AddCategoryDescription.Designer.cs">
+      <DependentUpon>201909221647445_AddCategoryDescription.cs</DependentUpon>
+>>>>>>> step1
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
   </ItemGroup>
@@ -82,8 +88,13 @@
     <EmbeddedResource Include="Migrations\201805190719490_InitialCreate.resx">
       <DependentUpon>201805190719490_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201909221913135_AddCategoryDescription.resx">
       <DependentUpon>201909221913135_AddCategoryDescription.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\201909221647445_AddCategoryDescription.resx">
+      <DependentUpon>201909221647445_AddCategoryDescription.cs</DependentUpon>
+>>>>>>> step1
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
