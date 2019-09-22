@@ -20,6 +20,9 @@ namespace KatlaSport.DataAccess.ProductCatalogue
             Property(i => i.Created).HasColumnName("created_utc").IsRequired().HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
             Property(i => i.LastUpdatedBy).HasColumnName("updated_by_id").IsRequired();
             Property(i => i.LastUpdated).HasColumnName("updated_utc").IsRequired();
+            Property(i => i.Description).HasColumnName("product_description").HasMaxLength(300);
+            Property(i => i.ManufacturerCode).HasColumnName("product_manufacturer_code").HasMaxLength(10);
+            Property(i => i.Price).HasColumnName("product_price").IsOptional();
 
             // TODO STEP 2 - Add configuration for "Description", "ManufacturerCode" and "Price" properties here.
         }
