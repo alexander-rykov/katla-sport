@@ -65,7 +65,6 @@
     <Compile Include="Migrations\201805190719490_InitialCreate.Designer.cs">
       <DependentUpon>201805190719490_InitialCreate.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\201909221913135_AddCategoryDescription.cs" />
     <Compile Include="Migrations\201909221913135_AddCategoryDescription.Designer.cs">
      <DependentUpon>201909221913135_AddCategoryDescription.cs</DependentUpon>
