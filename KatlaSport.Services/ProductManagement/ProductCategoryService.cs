@@ -35,6 +35,10 @@ namespace KatlaSport.Services.ProductManagement
             var categories = dbCategories.Select(c => Mapper.Map<ProductCategoryListItem>(c)).ToList();
 
             // TODO STEP 3 - Add code for setting "ProductCount" property for each category here.
+            foreach (var c in categories)
+            {
+                c.ProductCount = await _context.Products.Where(p => p.CategoryId == c.Id).CountAsync();
+            }
 
             return categories;
         }

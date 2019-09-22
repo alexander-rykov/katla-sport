@@ -37,6 +37,5 @@ namespace KatlaSport.Services.ProductManagement
         /// Gets or sets a product price.
         /// </summary>
         public decimal Price { get; set; }
-        // TODO STEP 2 - Add "Description", "ManufacturerCode" and "Price" properties here.
     }
 }
