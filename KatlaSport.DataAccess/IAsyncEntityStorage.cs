@@ -8,7 +8,5 @@ namespace KatlaSport.DataAccess
         Task<int> SaveChangesAsync();
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
-
-        void SaveChanges();
     }
 }
