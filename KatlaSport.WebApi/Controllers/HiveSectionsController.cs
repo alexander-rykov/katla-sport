@@ -35,6 +35,7 @@ namespace KatlaSport.WebApi.Controllers
             return Ok(hives);
         }
 
+
         [HttpGet]
         [Route("{hiveSectionId:int:min(1)}")]
         [SwaggerResponse(HttpStatusCode.OK, Description = "Returns a hive section.", Type = typeof(HiveSection))]
