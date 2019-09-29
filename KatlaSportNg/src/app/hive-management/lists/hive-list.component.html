@@ -3,7 +3,6 @@
   <table class="table table-nonfluid">
     <thead>
       <th scope="col">#</th>
-      <!-- TODO STEP 6 - Add Code and Name headers here. -->
       <th scope="col">Code</th>
       <th scope="col">Name</th>
       <th scope="col"></th>
@@ -11,7 +10,6 @@
     <tbody>
       <tr *ngFor="let hive of hives">
         <th scope="row">{{hive.id}}</th>
-        <!-- TODO STEP 6 - Add code and name values here. -->
         <th>{{hive.code}}</th>
         <th>{{hive.name}}</th>
         <td>
@@ -19,7 +17,6 @@
             <div class="btn-group mr-2" role="group" aria-label="Delete group" *ngIf="!hive.isDeleted" (click)="onDelete(hive.id)">
               <button type="button" class="btn btn-danger">Delete</button>
             </div>
-            <!-- TODO STEP 6 - Add buttons here. -->
             <div class="btn-group mr-2" role="group" aria-label="View group">
               <button routerLink="/hive/{{hive.id}}/sections" type="button" class="btn btn-primary">View sections</button>
             </div>
