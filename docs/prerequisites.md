@@ -64,28 +64,10 @@ notepad.exe c:\Users\epamuser\.ssh\id_rsa.pub
 
 ### Angular/CLI
 
-Установка Angular/CLI возможно только после установки NodeJs.
-
-1. Открыть консоль командной строки и ввести "npm -g i @angular/cli":
+После клонирования репозитория следует восстановить зависимости:
 
 ```sh
-C:\Users\epamuser>npm -g i @angular/cli
-C:\Users\epamuser\AppData\Roaming\npm\ng -> C:\Users\epamuser\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
-
-> @angular/cli@6.0.1 postinstall C:\Users\epamuser\AppData\Roaming\npm\node_modules\@angular\cli
-> node ./bin/ng-update-message.js
-
-+ @angular/cli@6.0.1
-updated 9 packages in 20.781s
-```
-2. Проверить версию CLI:
-
-```sh
-C:\Users\epamuser>ng --version
-Angular CLI: 6.0.1
-Node: 10.1.0
-OS: win32 x64
-...
+$ npm i
 ```
 
 ### Visual Studio Code
