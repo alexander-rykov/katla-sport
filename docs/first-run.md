@@ -27,7 +27,7 @@
 D:\epam-lab\katla-sport-ng
 $ cd KatlaSportNg
 D:\epam-lab\katla-sport-ng\KatlaSportNg
-$ ng build
+$ npm run-script ng build
 
 Date: 2018-06-08T13:25:20.060Z
 Hash: e1b9cf821744cf58374d
@@ -43,7 +43,7 @@ chunk {vendor} vendor.js, vendor.js.map (vendor) 4.11 MB [initial] [rendered]
 
 ```sh
 D:\epam-lab\katla-sport-ng\KatlaSportNg
-$ ng serve
+$ npm run-script ng serve
 
 ** Angular Live Development Server is listening on localhost: 4200, open your browser on http://localhost:4200/ **
 
